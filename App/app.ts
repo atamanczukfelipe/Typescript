@@ -1,4 +1,4 @@
-let nome: string;
+/* let nome: string;
 let sobrenome: string;
 let idade: number;
 let maiorIdade: boolean;
@@ -27,3 +27,14 @@ function somar (a:number,b:number){
 resultado = somar(a,b);
 
 console.log(resultado);
+
+ */
+
+//Working with Arrays
+let arrayA: (number | string) []= [];
+
+arrayA.push(1);
+arrayA.push(30);
+arrayA.push("Teste");
+
+console.log(arrayA);
