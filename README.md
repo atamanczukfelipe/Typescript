@@ -15,3 +15,12 @@ Install Ts Node Dev
 ```javascript 
 npm i ts-node-dev -D
 ```
+
+Execute and Trasnpile the ts file
+```javascript 
+npx ts-node-dev app.ts
+```
+
+```javascript 
+npx ts-node-dev [file name]
+```
