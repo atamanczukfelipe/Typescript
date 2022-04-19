@@ -31,10 +31,39 @@ console.log(resultado);
  */
 
 //Working with Arrays
-let arrayA: (number | string) []= [];
+/* let arrayA: (number | string) []= [];
 
 arrayA.push(1);
 arrayA.push(30);
 arrayA.push("Teste");
 
-console.log(arrayA);
+console.log(arrayA); */
+
+//Type declaration
+type TipoArray = (number | "Test String") [];
+
+let a : TipoArray = [];
+
+a.push(1);
+a.push(8);
+a.push(6);
+a.push(2);
+a.push("Test String");
+
+console.log("Array A: ", a);
+
+type Animal = {
+    nome: String;
+    idade : number;
+    vivo?: boolean;
+}
+
+let Dog: Animal;
+
+Dog= {
+    nome : "Rex",
+    idade : 10,
+    vivo : true
+};
+
+console.log("Dog: ", Dog);
