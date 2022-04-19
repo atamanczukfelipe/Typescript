@@ -69,7 +69,7 @@ Dog= {
 console.log("Dog: ", Dog); */
 
 //Enum Example
-enum prodStatus{
+/* enum prodStatus{
     Ativo = 1,
     Inativo = 2,
     Indisponivel = 3
@@ -89,4 +89,51 @@ function ChecarProd(status: number){
     }
 }
 
-ChecarProd(3);
+ChecarProd(3); */
+
+//Interface
+
+//Interface Declaration
+interface IAnimal {
+    //variables
+    nome:string;
+    idade: number;
+    isAlive: boolean;
+
+    //Methods
+    born(): void;
+    grow(): void;
+    die(): void;
+}
+
+let Dog: IAnimal ={
+    nome: "Caramelo",
+    idade : 0,
+    isAlive: false,
+
+    born(){
+        this.isAlive = true;
+        return console.log(`o ${this.nome} Nasceu!`);
+    },
+
+    grow(){
+        this.idade++;
+        return console.log(`o ${this.nome} ficou mais velho, ele está com ${this.idade} anos `);
+    },
+
+    die(){
+        this.isAlive = false;
+        this.idade = 0;
+        return console.log(`o ${this.nome} Morreu!`);
+    }
+}
+
+Dog.born();
+for(let i =0; i< 9; i++){
+    Dog.grow();
+}
+if (Dog.idade == 9){
+    Dog.die();
+}else{
+    Dog.grow();
+}
