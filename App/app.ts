@@ -40,7 +40,7 @@ arrayA.push("Teste");
 console.log(arrayA); */
 
 //Type declaration
-type TipoArray = (number | "Test String") [];
+/* type TipoArray = (number | "Test String") [];
 
 let a : TipoArray = [];
 
@@ -66,4 +66,27 @@ Dog= {
     vivo : true
 };
 
-console.log("Dog: ", Dog);
+console.log("Dog: ", Dog); */
+
+//Enum Example
+enum prodStatus{
+    Ativo = 1,
+    Inativo = 2,
+    Indisponivel = 3
+}
+
+function ChecarProd(status: number){
+    switch(status){
+        case prodStatus.Ativo: 
+            console.log("Produto Disponivel!");
+            break;
+        case prodStatus.Inativo: 
+            console.log("Produto Não Encontrado");
+            break;
+        case prodStatus.Indisponivel: 
+            console.log("Produto Indisponivel!");
+            break;
+    }
+}
+
+ChecarProd(3);
