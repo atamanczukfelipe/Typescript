@@ -142,17 +142,28 @@ if (Dog.idade == 9){
 class Animal implements IAnimal{
     readonly nome:string;
     idade: number;
-    isAlive: boolean;
+    private _isAlive: boolean;
+
+    //Get
+    get isAlive(): boolean{
+        return this._isAlive;
+    }
+
+    //Set
+    set isAlive(status:boolean){
+        this._isAlive = status;
+    }
+
 
     //Construtor
     constructor(nome: string){
         this.nome = nome;
         this.idade = 0;
-        this.isAlive = true;
+        this._isAlive = true;
     }
 
     born(){
-        this.isAlive = true;
+        this._isAlive = true;
         return console.log(`o ${this.nome} Nasceu!`);
     };
 
@@ -162,7 +173,7 @@ class Animal implements IAnimal{
     };
 
     die(){
-        this.isAlive = false;
+        this._isAlive = false;
         this.idade = 0;
         return console.log(`o ${this.nome} Morreu!`);
     }
