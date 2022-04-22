@@ -140,7 +140,7 @@ if (Dog.idade == 9){
 
 //Classes
 class Animal implements IAnimal{
-    nome:string;
+    readonly nome:string;
     idade: number;
     isAlive: boolean;
 
@@ -195,3 +195,6 @@ if (Cat.idade >= 8) {
 }else{
     Cat.grow();
 }
+
+/* //This gonna have an error, now that name is a Readonly property
+Cat.nome = "Mika"; */
