@@ -94,7 +94,7 @@ ChecarProd(3); */
 //Interface
 
 //Interface Declaration
- interface IAnimal {
+ /* interface IAnimal {
     //variables
     nome:string;
     idade: number;
@@ -104,7 +104,7 @@ ChecarProd(3); */
     born(): void;
     grow(): void;
     die(): void;
-}
+} */
 /*
 let Dog: IAnimal ={
     nome: "Caramelo",
@@ -139,7 +139,7 @@ if (Dog.idade == 9){
 } */
 
 //Classes
-class Animal implements IAnimal{
+/* class Animal implements IAnimal{
     readonly nome:string;
     idade: number;
     private _isAlive: boolean;
@@ -178,7 +178,7 @@ class Animal implements IAnimal{
         return console.log(`o ${this.nome} Morreu!`);
     }
 
-}
+} */
 
 /* let Dog = new Animal('Pretinha');
 Dog.born();
@@ -212,7 +212,7 @@ Cat.nome = "Mika"; */
 
 
 /*Working with namespaces*/
-namespace Terrestres{
+/* namespace Terrestres{
     export class Dog extends Animal{
         run(){
             console.log(`O ${this.nome} correu!`)
@@ -222,8 +222,8 @@ namespace Terrestres{
     export let cachorro = new Dog('Rex');
     //inside execution
     //cachorro.run();
-}
-namespace Marinhos{
+} */
+/* namespace Marinhos{
     export class Golfinho extends Animal{
         nadar(){
             console.log(`O ${this.nome} nadou!`)
@@ -233,10 +233,18 @@ namespace Marinhos{
     export let dolphing = new Golfinho('Fliper');
     //inside execution
     //dolphing.nadar();
-}
+} */
 
 
 /*Working Outside */
 
-Terrestres.cachorro.run();
-Marinhos.dolphing.nadar();
+/* Terrestres.cachorro.run();
+Marinhos.dolphing.nadar(); */
+
+/*Working with Declarations */
+
+//import js lib
+import calc from './calc.js';
+
+console.log(calc.soma(10,20)); 
+console.log(calc.sub(10,5));
