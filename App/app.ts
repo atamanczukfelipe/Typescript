@@ -94,7 +94,7 @@ ChecarProd(3); */
 //Interface
 
 //Interface Declaration
-interface IAnimal {
+ interface IAnimal {
     //variables
     nome:string;
     idade: number;
@@ -105,7 +105,7 @@ interface IAnimal {
     grow(): void;
     die(): void;
 }
-
+/*
 let Dog: IAnimal ={
     nome: "Caramelo",
     idade : 0,
@@ -136,4 +136,62 @@ if (Dog.idade == 9){
     Dog.die();
 }else{
     Dog.grow();
+} */
+
+//Classes
+class Animal implements IAnimal{
+    nome:string;
+    idade: number;
+    isAlive: boolean;
+
+    //Construtor
+    constructor(nome: string){
+        this.nome = nome;
+        this.idade = 0;
+        this.isAlive = true;
+    }
+
+    born(){
+        this.isAlive = true;
+        return console.log(`o ${this.nome} Nasceu!`);
+    };
+
+    grow(){
+        this.idade++;
+        return console.log(`o ${this.nome} ficou mais velho, ele está com ${this.idade} anos `);
+    };
+
+    die(){
+        this.isAlive = false;
+        this.idade = 0;
+        return console.log(`o ${this.nome} Morreu!`);
+    }
+
+}
+
+let Dog = new Animal('Pretinha');
+Dog.born();
+
+for (let index = 0; index < 11; index++) {
+    Dog.grow();
+}
+
+if (Dog.idade >= 10) {
+    Dog.die();
+}else{
+    Dog.grow();
+}
+
+
+let Cat = new Animal('Simba');
+Cat.born();
+
+for (let index = 0; index < 8; index++) {
+    Cat.grow();
+}
+
+if (Cat.idade >= 8) {
+    Cat.die();
+}else{
+    Cat.grow();
 }
