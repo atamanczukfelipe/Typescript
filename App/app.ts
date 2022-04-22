@@ -180,7 +180,7 @@ class Animal implements IAnimal{
 
 }
 
-let Dog = new Animal('Pretinha');
+/* let Dog = new Animal('Pretinha');
 Dog.born();
 
 for (let index = 0; index < 11; index++) {
@@ -191,10 +191,10 @@ if (Dog.idade >= 10) {
     Dog.die();
 }else{
     Dog.grow();
-}
+} */
 
 
-let Cat = new Animal('Simba');
+/* let Cat = new Animal('Simba');
 Cat.born();
 
 for (let index = 0; index < 8; index++) {
@@ -205,7 +205,38 @@ if (Cat.idade >= 8) {
     Cat.die();
 }else{
     Cat.grow();
-}
+} */
 
 /* //This gonna have an error, now that name is a Readonly property
 Cat.nome = "Mika"; */
+
+
+/*Working with namespaces*/
+namespace Terrestres{
+    export class Dog extends Animal{
+        run(){
+            console.log(`O ${this.nome} correu!`)
+        }
+    }
+    //export the object constructor
+    export let cachorro = new Dog('Rex');
+    //inside execution
+    //cachorro.run();
+}
+namespace Marinhos{
+    export class Golfinho extends Animal{
+        nadar(){
+            console.log(`O ${this.nome} nadou!`)
+        }
+    }
+    //export the object constructor
+    export let dolphing = new Golfinho('Fliper');
+    //inside execution
+    //dolphing.nadar();
+}
+
+
+/*Working Outside */
+
+Terrestres.cachorro.run();
+Marinhos.dolphing.nadar();
