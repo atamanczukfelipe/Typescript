@@ -183,7 +183,7 @@ if (Dog.idade >= 10) {
 }
 
 
-let Cat = new Animal('Mika');
+let Cat = new Animal('Simba');
 Cat.born();
 
 for (let index = 0; index < 8; index++) {
