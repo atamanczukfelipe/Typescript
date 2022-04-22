@@ -6,6 +6,11 @@ Init and create project package.json
 npm init
 ```
 
+Npm install Typescript
+```javascript 
+npm i typescript
+```
+
 Create ts config.json
 ```javascript 
 npx tsc --init
