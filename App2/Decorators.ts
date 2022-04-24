@@ -34,6 +34,7 @@ class Sony{
 let tvSony = new Sony();
 console.log(tvSony); */
 
+/* Property Decorator Example */
 function minSize(size: number){
     return(target: any, key:any) => {
         let val = target[key]
