@@ -1,7 +1,7 @@
 /*Decorator Syntax
 @name (params)
 */
-function greeting( msg:string){
+/* function greeting( msg:string){
     return (target: any)=> {
         console.log(`${msg} - ${target}`);
     }
@@ -32,4 +32,39 @@ class Sony{
 }
 
 let tvSony = new Sony();
-console.log(tvSony);
+console.log(tvSony); */
+
+function minSize(size: number){
+    return(target: any, key:any) => {
+        let val = target[key]
+
+        const getter = () => val;
+        const setter = (value:number) =>{
+            if (value < size) {
+                console.log(`O tamanho da tela deve ser maior que ${size} polegdas`)
+            }else{
+                val = value
+                console.log(`O tamanho da tela é ${size} polegadas`)
+            }
+        }
+
+        Object.defineProperty(target, key,{
+            get: getter,
+            set: setter
+
+        });
+    }
+
+}
+class LG{
+    @minSize(32)
+    size: number;
+
+    constructor(size: number){
+        this.size = size;
+    }
+}
+
+let LGTV = new LG(55);
+
+console.log(LGTV.size);
