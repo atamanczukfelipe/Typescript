@@ -1,5 +1,3 @@
-import { setSourceMapRange } from "./node_modules/typescript/lib/typescript";
-
 /*Decorator Syntax
 @name (params)
 */
