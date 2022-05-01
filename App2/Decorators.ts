@@ -34,7 +34,8 @@ class Sony{
 let tvSony = new Sony();
 console.log(tvSony); */
 
-function minSize(size: number){
+/* Property Decorator Example */
+/* function minSize(size: number){
     return(target: any, key:any) => {
         let val = target[key]
 
@@ -67,4 +68,37 @@ class LG{
 
 let LGTV = new LG(55);
 
-console.log(LGTV.size);
+console.log(LGTV.size); */
+
+/**Decorators With Functions */
+
+function delay(time: number){
+    return (target: any, key: string, descriptor: PropertyDescriptor) => {
+        let method = descriptor.value;
+
+
+        descriptor.value = function (...args: any){
+            setTimeout(() => {
+                method.apply(this, args)
+            }, time);
+        }
+
+        return descriptor;
+    }
+}
+class Timer{
+
+    @delay(2000)
+    newTimer(cont: number):number{
+        if (cont === 0) {
+            return 0
+        }else{
+            console.log(`Contador em ${cont}`);
+            return this.newTimer(cont - 1);
+        }
+    }
+}
+
+let T = new Timer();
+
+T.newTimer(5);
