@@ -22,7 +22,7 @@ console.log(pessoa.idade);
 /**Generics With Functions */
 /**In this Example generic T over the function let the funcion works with diferent type of data */
 
-let carros: string[] = ['Gol', 'Fiesta', ' Up'];
+/* let carros: string[] = ['Gol', 'Fiesta', ' Up'];
 let numPrimos: number[] = [2, 3, 5];
 
 function pegarPrimeiroElemento<T >(lista:T[]): T{
@@ -30,4 +30,4 @@ function pegarPrimeiroElemento<T >(lista:T[]): T{
 }
 
 console.log(pegarPrimeiroElemento(carros));
-console.log(pegarPrimeiroElemento(numPrimos));
+console.log(pegarPrimeiroElemento(numPrimos)); */
