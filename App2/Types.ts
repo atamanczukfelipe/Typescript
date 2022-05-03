@@ -48,12 +48,12 @@ const PJ: PJuridica={
 }
 
 function showPessoa(pessoa: PFisica| PJuridica){
-    if((pessoa as PFisica).cpf){
-        console.log((pessoa as PFisica).nome);
-        console.log((pessoa as PFisica).cpf);
+    if('cpf' in pessoa){
+        console.log(pessoa.nome);
+        console.log(pessoa.cpf);
     }else{
-        console.log((pessoa as PJuridica).nome);
-        console.log((pessoa as PJuridica).cnpj);
+        console.log(pessoa.nome);
+        console.log(pessoa.cnpj);
     }
 }
 
