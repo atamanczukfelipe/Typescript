@@ -1,5 +1,6 @@
+let message: string  = 'Hello';
+document.body.innerHTML = message;
+
 for ( let i =0; i < 5; i++){
-    //this is used for debug
-    //debugger
-    console.log(i);
+    document.body.innerHTML = `${i}`;
 }
